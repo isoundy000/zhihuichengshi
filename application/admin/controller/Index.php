@@ -9,7 +9,7 @@ class Index extends Common{
 	}
 
 	public function login(){
-		
+
 		return $this->fetch();
 	}
 }
