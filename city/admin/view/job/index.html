@@ -1,0 +1,48 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h4>云工作</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>企业名称</th>
+							<th>职位</th>
+							<th>人数</th>
+							<th>工作经验</th>
+							<th>学历要求</th>
+							<th>工资待遇</th>
+							<th>联系电话</th>
+							<th>添加时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.id}</td>
+							<td>{$v.company_name}</td>
+							<td>{$v.job_name}</td>
+							<td>{$v.job_count}</td>
+							<td>{$v.job_work}</td>
+							<td>{$v.job_edu}</td>
+							<td>{$v.job_wage}</td>
+							<td>{$v.contact_tel}</td>
+							<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
+							<td>
+								<a href="{:url('addedit?id='.$v['id'])}" class="btn btn-info">编辑</a>
+								<a href="{:url('del?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger">删除</a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>
