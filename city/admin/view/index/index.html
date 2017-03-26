@@ -263,8 +263,7 @@
                                         <i class="icon-double-angle-right"></i>接口管理</a>
                                 </li>
                                 <li class="home">
-                                    <a href="javascript:void(0)" name="Category_Manage.html" title="其它设置" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>其它设置</a>
+                                    <a href="javascript:void(0)" name="{:url('Region/index')}" title="地区设置" class="iframeurl"><i class="icon-double-angle-right"></i>区域设置</a>
                                 </li>
                             </ul>
                         </li>
@@ -318,55 +317,8 @@
                             </a>
                             <ul class="submenu">
                                 <li class="home">
-                                    <a href="javascript:void(0)" name="user_list.html" title="会员列表" class="iframeurl">
+                                    <a href="javascript:void(0)" name="{:url('User/index')}" title="会员列表" class="iframeurl">
                                         <i class="icon-double-angle-right"></i>会员列表</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle">
-                                <i class="icon-umbrella"></i>
-                                <span class="menu-text">楼下商家</span>
-                                <b class="arrow icon-angle-down"></b>
-                            </a>
-                            <ul class="submenu">
-                                <li class="home">
-                                    <a href="javascript:void(0)" name="{:url('Shop/index')}" title="所有商家" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>所有商家</a>
-                                </li>
-                                <li class="home">
-                                    <a href="javascript:void(0)" name="{:url('Shop/addedit')}" title="新增商家" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>新增商家</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle">
-                                <i class="icon-list"></i>
-                                <span class="menu-text">文章管理</span>
-                                <b class="arrow icon-angle-down"></b>
-                            </a>
-                            <ul class="submenu">
-                                <li class="home">
-                                    <a href="javascript:void(0)" name="Guestbook.html" title="文章列表" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>文章列表</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle">
-                                <i class="icon-book"></i>
-                                <span class="menu-text">云工作</span>
-                                <b class="arrow icon-angle-down"></b>
-                            </a>
-                            <ul class="submenu">
-                                <li class="home">
-                                    <a href="javascript:void(0)" name="{:url('Job/index')}" title="所有职位" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>所有职位</a>
-                                </li>
-                                <li class="home">
-                                    <a href="javascript:void(0)" name="{:url('Job/addedit')}" title="新增职位" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>新增职位</a>
                                 </li>
                             </ul>
                         </li>
@@ -393,18 +345,85 @@
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle">
+                                <i class="icon-umbrella"></i>
+                                <span class="menu-text">楼下商家</span>
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Shop/index')}" title="所有商家" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>所有商家</a>
+                                </li>
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Shop/addedit')}" title="新增商家" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>新增商家</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-list"></i>
+                                <span class="menu-text">新闻管理</span>
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('News/index')}" title="新闻列表" class="iframeurl"><i class="icon-double-angle-right"></i>新闻列表</a>
+                                </li>
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('News/add')}" title="添加新闻" class="iframeurl"><i class="icon-double-angle-right"></i>添加新闻</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-book"></i>
+                                <span class="menu-text">云工作</span>
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Job/index')}" title="所有职位" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>所有职位</a>
+                                </li>
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Job/addedit')}" title="新增职位" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>新增职位</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="dropdown-toggle">
                                 <i class="icon-comments"></i>
                                 <span class="menu-text">论坛交流</span>
                                 <b class="arrow icon-angle-down"></b>
                             </a>
                             <ul class="submenu">
                                 <li class="home">
-                                    <a href="javascript:void(0)" name="admin_Competence.html" title="论坛版块" class="iframeurl">
+                                    <a href="javascript:void(0)" name="{:url('Bbs/forum')}" title="论坛版块" class="iframeurl">
                                         <i class="icon-double-angle-right"></i>论坛版块</a>
                                 </li>
                                 <li class="home">
-                                    <a href="javascript:void(0)" name="administrator.html" title="贴子列表" class="iframeurl">
+                                    <a href="javascript:void(0)" name="{:url('Bbs/index')}" title="贴子列表" class="iframeurl">
                                         <i class="icon-double-angle-right"></i>贴子列表</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-bullhorn"></i>
+                                <span class="menu-text">二手信息</span>
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Classinfo/category')}" title="分类列表" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>分类列表</a>
+                                </li>
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Classinfo/index')}" title="信息列表" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>信息列表</a>
                                 </li>
                             </ul>
                         </li>

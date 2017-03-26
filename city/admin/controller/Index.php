@@ -9,7 +9,9 @@ class Index extends Common{
 	}
 
 	public function home(){
+		$usercnt = db('user')->count();
 
+		$this->assign('usercnt',$usercnt);
 		return $this->fetch();
 	}
 

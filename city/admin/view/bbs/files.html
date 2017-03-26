@@ -1,0 +1,42 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<a class="btn btn-info" href="{:url('add_posts')}">新增贴子</a>
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>贴子管理</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>所属贴子</th>
+							<th>图片名称</th>
+							<th>图片预览</th>
+							<th>图片类型</th>
+							<th width="200">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.id}</td>
+							<td>{$v.title}</td>
+							<td>{$v.filename}</td>
+							<td>
+								<a href="{$v.filepath}" target="_blank"><img src="{$v.filepath}" width="50" height="50"></a>
+							</td>
+							<td>{$v.fileext}</td>
+							<td>
+								<a href="{:url('del_file?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger btn-sm">删除</a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>

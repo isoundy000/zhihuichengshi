@@ -1,0 +1,46 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<a class="btn btn-info" href="{:url('add_forum')}">新增版块</a>
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>论坛版块</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>版块名称</th>
+							<th>版块说明</th>
+							<th>是否允许发贴</th>
+							<th>排序</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.id}</td>
+							<td>{$v.name}</td>
+							<td>{$v.info}</td>
+							<td>
+								{switch name="v.is_lock"}
+								{case value="1"}<p class="text-success">允许</p>{/case}
+								{case value="0"}<p class="text-danger">禁止</p>{/case}
+								{/switch}
+							</td>
+							<td>{$v.rank}</td>
+							<td>
+								<a href="{:url('add_forum?id='.$v['id'])}" class="btn btn-info btn-sm">编辑</a>
+								<a href="{:url('del_forum?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger btn-sm">删除</a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>

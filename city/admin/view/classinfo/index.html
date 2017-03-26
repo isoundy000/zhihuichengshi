@@ -1,0 +1,66 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-9">
+				<form class="form-inline" action="{:url('index')}">
+  					<div class="form-group">
+    					<input type="text" class="form-control" name="title" placeholder="信息标题" value="{$Think.get.title}">
+  					</div>
+  					<div class="form-group">
+    					<select name="cid" class="form-control">
+    						<option value="">全部分类</option>
+    						{foreach name="cat" item="v"}
+    						<option value="{$v.id}" {if condition="$v['id'] eq @$_GET['cid']"}selected{/if}>{$v.name}</option>
+    						{/foreach}
+    					</select>
+  					</div>
+  					<button type="submit" class="btn btn-success">搜索</button>
+  					<a href="{:url('index')}" class="btn btn-info">全部</a>
+				</form>
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>信息管理</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>信息标题</th>
+							<th>所属分类</th>
+							<th>发布用户</th>
+							<th>信息描述</th>
+							<th>物品价格</th>
+							<th>联系人</th>
+							<th>电话</th>
+							<th>发布时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.id}</td>
+							<td>{$v.title}</td>
+							<td>{$v.cat_name}</td>
+							<td>{$v.nickname|default='管理员'}</td>
+							<td>{$v.info}</td>
+							<td>{$v.price}</td>
+							<td>{$v.contact}</td>
+							<td>{$v.tel}</td>
+							<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
+							<td>
+								<a href="{:url('del?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger btn-sm">删除</a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>
