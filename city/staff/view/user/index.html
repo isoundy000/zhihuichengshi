@@ -1,0 +1,53 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>会员管理</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>手机号</th>
+							<th>昵称</th>
+							<th>性别</th>
+							<th>年龄</th>
+							<th>邮箱</th>
+							<th>QQ</th>
+							<th>微信</th>
+							<th>注册时间</th>
+							<th width="200">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.id}</td>
+							<td>{$v.phone}</td>
+							<td>{$v.nickname}</td>
+							<td>{$v.sex}</td>
+							<td>{$v.age}</td>
+							<td>{$v.email}</td>
+							<td>{$v.qq}</td>
+							<td>{$v.wechat}</td>
+							<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
+							<td>
+								<a href="{:url('add?id='.$v['id'])}" class="btn btn-info btn-sm">编辑</a>
+								{eq name="v.status" value="1"}
+								<a href="{:url('attr?status=0&id='.$v['id'])}" class="btn btn-warning btn-sm">锁定</a>
+								{else/}
+								<a href="{:url('attr?status=1&id='.$v['id'])}" class="btn btn-primary btn-sm">解锁</a>
+								{/eq}
+								<a href="{:url('del?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger btn-sm">删除</a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>

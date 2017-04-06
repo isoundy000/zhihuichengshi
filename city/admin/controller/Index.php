@@ -32,4 +32,11 @@ class Index extends Common{
 		}
 		return $this->fetch();
 	}
+
+	public function logout(){
+		session('islogin',null);
+		session('userid',null);
+		session('username',null);
+		$this->redirect('login');
+	}
 }

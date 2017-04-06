@@ -1,0 +1,54 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px">
+	<div class="col-md-1"></div>
+	<div class="col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h4>基本设置</h4></div>
+			<div class="panel-body">
+				<form action="" class="form-horizontal" method="post">
+					<div class="form-group">
+						<label class="col-md-2 control-label">配套设施</label>
+						<div class="col-md-9">
+							<textarea name="facility" class="form-control">{:config('base.facility')}</textarea>
+							<p>以#分隔</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">出租方式</label>
+						<div class="col-md-9">
+							<textarea name="mode" class="form-control">{:config('base.mode')}</textarea>
+							<p>以#分隔</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">户型</label>
+						<div class="col-md-9">
+							<textarea name="house_type" class="form-control">{:config('base.house_type')}</textarea>
+							<p>以#分隔</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">装修</label>
+						<div class="col-md-9">
+							<textarea name="adorn" class="form-control">{:config('base.adorn')}</textarea>
+							<p>以#分隔</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">价格区间</label>
+						<div class="col-md-9">
+							<textarea name="price" class="form-control">{:config('base.price')}</textarea>
+							<p>以#分隔，以-区间</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label"></label>
+						<div class="col-md-9">
+							<button class="btn btn-success">确认保存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

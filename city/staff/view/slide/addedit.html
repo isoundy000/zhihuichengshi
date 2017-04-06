@@ -1,0 +1,56 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px">
+	<div class="col-md-2"></div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h4>添加/修改幻灯</h4></div>
+			<div class="panel-body">
+				<form action="" class="form-horizontal" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="id" value="{$res.id|default=''}">
+					<div class="form-group">
+						<label class="col-md-3 control-label">幻灯名称</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="name" value="{$res.name|default=''}" required="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">图片</label>
+						<div class="col-md-9">
+							<input type="file" class="form-control" name="file">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">位置</label>
+						<div class="col-md-9">
+							{notempty name="res"}
+							<select name="position" class="form-control" required="">
+								<option value="top" {eq name="res.position" value='top'}selected{/eq}>顶部</option>
+								<option value="center" {eq name="res.position" value='center'}selected{/eq}>中部</option>
+							</select>
+							{else/}
+							<select name="position" class="form-control" required="">
+								<option value="top">顶部</option>
+								<option value="center">中部</option>
+							</select>
+							{/notempty}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">链接</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="link" value="{$res.link|default=''}">
+							<p>可连接新闻链接</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label"></label>
+						<div class="col-md-9">
+							<button class="btn btn-success">确定添加</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3"></div>
+</div>

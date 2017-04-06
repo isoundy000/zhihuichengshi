@@ -173,8 +173,7 @@
                             icon: 2,
                         },
                         function() {
-                            location.href = "login.html";
-
+                            location.href = "{:url('logout')}";
                         });
                     });
                 })
@@ -255,16 +254,17 @@
                             </a>
                             <ul class="submenu">
                                 <li class="home">
-                                    <a href="javascript:void(0)" name="Products_List.html" title="基本设置" class="iframeurl">
+                                    <a href="javascript:void(0)" name="{:url('System/base')}" title="基本设置" class="iframeurl">
                                         <i class="icon-double-angle-right"></i>基本设置</a>
                                 </li>
                                 <li class="home">
-                                    <a href="javascript:void(0)" name="Brand_Manage.html" title="接口管理" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>接口管理</a>
+                                    <a href="javascript:void(0)" name="{:url('System/sms')}" title="短信接口" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>短信接口</a>
                                 </li>
                                 <li class="home">
                                     <a href="javascript:void(0)" name="{:url('Region/index')}" title="地区设置" class="iframeurl"><i class="icon-double-angle-right"></i>区域设置</a>
                                 </li>
+                                
                             </ul>
                         </li>
                         <li>
@@ -303,10 +303,7 @@
                                     <a href="javascript:void(0)" name="Amounts.html" title="已租房源" class="iframeurl">
                                         <i class="icon-double-angle-right"></i>已租房源</a>
                                 </li>
-                                <li class="home">
-                                    <a href="javascript:void(0)" name="Order_handling.html" title="投诉建议" class="iframeurl">
-                                        <i class="icon-double-angle-right"></i>投诉建议</a>
-                                </li>
+                                
                             </ul>
                         </li>
                         <li>
@@ -427,6 +424,23 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-bullhorn"></i>
+                                <span class="menu-text">其他</span>
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Gbook/index')}" title="投诉建议" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>投诉建议</a>
+                                </li>
+                                <li class="home">
+                                    <a href="javascript:void(0)" name="{:url('Slide/index')}" title="幻灯管理" class="iframeurl">
+                                        <i class="icon-double-angle-right"></i>幻灯管理</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="sidebar-collapse" id="sidebar-collapse">
                         <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
@@ -455,7 +469,7 @@
                             </li>
                         </ul>
                     </div>
-                    <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;" name="iframe" frameborder="0" src="home.html"></iframe>
+                    <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;" name="iframe" frameborder="0" src="{:url('home')}"></iframe>
                 </div>
             </div>
         </div>

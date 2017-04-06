@@ -1,0 +1,91 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-9">
+				<form class="form-inline" action="{:url('index')}">
+  					<div class="form-group">
+    					<input type="text" class="form-control" name="title" placeholder="标题" value="{$Think.get.title}">
+  					</div>
+  					<div class="form-group">
+    					<select name="region_id" class="form-control">
+    						<option value="">地区</option>
+    						{foreach name="region" item="v"}
+    						<option value="{$v.id}" {if condition="$v['id'] eq @$_GET['region_id']"}selected{/if}>{$v.html}{$v.region_name}</option>
+    						{/foreach}
+    					</select>
+  					</div>
+  					<button type="submit" class="btn btn-success">搜索</button>
+  					<a href="{:url('index')}" class="btn btn-info">全部</a>
+				</form>
+			</div>
+		</div>
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>房源管理</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>房东</th>
+							<th>标题</th>
+							<th>区域</th>
+							<th>价格</th>
+							<th>方式</th>
+							<th>面积</th>
+							<th>户型</th>
+							<th>朝向</th>
+							<th>装修</th>
+							<th>楼层</th>
+							<th>推荐</th>
+							<th>状态</th>
+							<th width="160">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.username}</td>
+							<td>{$v.title}</td>
+							<td>{$v.region_name}</td>
+							<td>{$v.price}</td>
+							<td>{$v.mode}</td>
+							<td>{$v.area}</td>
+							<td>{$v.type}</td>
+							<td>{$v.face}</td>
+							<td>{$v.adorn}</td>
+							<td>{$v.floor}</td>
+							<td>
+								{switch name="v.status"}
+								{case value="0"}<span class="bg-primary">未租</span>{/case}
+								{case value="1"}<span class="bg-success">已租</span>{/case}
+								{/switch}
+							</td>
+							<td>
+								{eq name="v.is_top" value="1"}
+								<a href="{:url('attr?status=0&id='.$v['id'])}" class="bg-success">是</a>
+								{else/}
+								<a href="{:url('attr?status=1&id='.$v['id'])}" class="bg-primary">否</a>
+								{/eq}
+							</td>
+							<td>
+								<a href="{:url('add?id='.$v['id'])}" class="btn btn-info btn-xs">编辑</a>
+								<a href="{:url('files?id='.$v['id'])}" class="btn btn-success btn-xs">图片附件</a>
+								{eq name="v.status" value="0"}
+								<a href="{:url('del?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger btn-xs">删除</a>
+								{/eq}
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+.bg-primary{background-color:#1E9FFF;color:#fff;padding:3px 5px;}
+.bg-success{background-color:#5FB878;color:#fff;padding:3px 5px;}
+</style>

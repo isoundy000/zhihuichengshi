@@ -5,7 +5,7 @@ use think\Url;
 class Common extends Controller{
 	
 	public function _initialize(){
-		Url::root('/index.php');
+		Url::root('/admin.php');
 		$c = request()->controller();
 		$a = request()->action();
 		if(!session('?islogin')&&$a!='login'){

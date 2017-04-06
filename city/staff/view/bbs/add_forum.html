@@ -1,0 +1,66 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>编辑版块</h4></div>
+			<div class="panel-body">
+				<form action=""  class="form-horizontal" method="post">
+					<input type="hidden" name="id" value="{$id}">
+					<div class="form-group">
+						<label class="col-md-2 control-label">版块名称</label>
+						<div class="col-md-9">
+							<input class="form-control" type="text" name="name" value="{$forum.name|default=''}" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">版块介绍</label>
+						<div class="col-md-9">
+							<input class="form-control" type="text" name="info" value="{$forum.info|default=''}" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">版块排序</label>
+						<div class="col-md-9">
+							<input class="form-control" type="number" name="rank" value="{$forum.rank|default=0}" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">是否允许发贴</label>
+						{empty name="forum"}
+						<div class="col-md-9">
+							<label class="radio-inline">
+								<input type="radio" name="is_lock" value="1" checked>是
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="is_lock" value="0">否
+							</label>
+						</div>
+						{else/}
+						<div class="col-md-9">
+							<label class="radio-inline">
+								<input type="radio" name="is_lock" value="1" checked>是
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="is_lock" value="0" {eq name="forum.is_lock" value="0"}checked{/eq}>否
+							</label>
+						</div>
+						{/empty}
+					</div>
+					<div class="form-group">
+						<label class="label-control col-md-2"></label>
+						<div class="col-md-9">
+							<button type="submit" class="btn btn-info">确认操作</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="panel-footer">
+				
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		
+	</div>
+</div>

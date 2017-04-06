@@ -1,0 +1,40 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px">
+	<div class="col-md-2"></div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h4>添加/修改房东</h4></div>
+			<div class="panel-body">
+				<form action="" class="form-horizontal" method="post">
+					<input type="hidden" name="id" value="{$res.id|default=''}">
+					<div class="form-group">
+						<label class="col-md-3 control-label">用户名</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="username" value="{$res.username|default=''}" required="" {notempty name="res.username"}readonly{/notempty}>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">密码</label>
+						<div class="col-md-9">
+							<input type="password" class="form-control" name="password" {empty name="res.id"}required{/empty}>
+							{notempty name="res.id"}不改更，请留空{/notempty}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">真实姓名</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="truename" value="{$res.truename|default=''}" required="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label"></label>
+						<div class="col-md-9">
+							<button class="btn btn-success">确定添加</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3"></div>
+</div>

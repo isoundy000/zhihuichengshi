@@ -1,0 +1,49 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<div class="panel panel-default" style="margin-top:5px">
+			<div class="panel-heading"><h4>回复管理</h4></div>
+			<div class="panel-body">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>贴子标题</th>
+							<th>回复内容</th>
+							<th>回复用户</th>
+							<th>图片</th>
+							<th>顶</th>
+							<th>踩</th>
+							<th width="150">回复时间</th>
+							<th width="100">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						{foreach name="list" item="v"}
+						<tr>
+							<td>{$v.id}</td>
+							<td>{$v.title}</td>
+							<td>{$v.content}</td>
+							<td>{$v.uid}</td>
+							<td>
+								{notempty name="v.filepath"}
+								<a href="{$v.filepath}"><img src="{$v.filepath}" width="50" height="50"></a>
+								{/notempty}
+							</td>
+							<td>{$v.ding}</td>
+							<td>{$v.cai}</td>
+							<td>{$v.addtime|date="Y-m-d H:i:s",###}</td>
+							<td>
+								<a href="{:url('del_reply?id='.$v['id'])}" onclick="return confirm('确认要删除吗？')" class="btn btn-danger btn-sm">删除</a>
+							</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<div class="panel-footer">
+				{$list->render()}
+			</div>
+		</div>
+	</div>
+</div>

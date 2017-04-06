@@ -40,4 +40,12 @@ class Region extends Common{
 		$this->assign('id',$id);
 		return $this->fetch();
 	}
+
+	public function del($id){
+		if(db('region')->delete($id)){
+			$this->success('删除成功');
+		}else{
+			$this->error('删除失败');
+		}
+	}
 }

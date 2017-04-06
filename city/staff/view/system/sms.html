@@ -1,0 +1,45 @@
+{layout name="layout"/}
+<div class="row" style="margin-top:10px">
+	<div class="col-md-2"></div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h4>短信接口</h4></div>
+			<div class="panel-body">
+				<form action="" class="form-horizontal" method="post">
+					<div class="form-group">
+						<label class="col-md-2 control-label">用户名</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="username" value="{:config('sms.username')}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">密码</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="password" value="{:config('sms.password')}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">公司名称</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control"  name="sign" value="{:config('sms.sign')}" placeholder="如：百度科技">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label"></label>
+						<div class="col-md-9">
+							<font color="red">{$sms}</font>
+							<a href="http://www.smsbao.com/reg?r=10552" target="_blank">接口申请</a>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label"></label>
+						<div class="col-md-9">
+							<button class="btn btn-success">确认保存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3"></div>
+</div>
